@@ -1,13 +1,9 @@
 class Roller():
-	"""These objects will scan the adjacent pixels for height and move there"""
+	"""A point with some methods to do with position"""
 	def __init__(self, x, y):
 		super(Roller, self).__init__()
 		self.x = x
 		self.y = y
-		self.radius = 2
-
-	def update(self):
-		pass
 
 	def get_x(self, offset=0):
 		return self.x+offset
