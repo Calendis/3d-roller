@@ -5,6 +5,8 @@ from pygame.locals import *
 from noise import pnoise2
 from time import time
 import shelve
+from random import randint
+
 import Roller
 
 #pygame.init()
@@ -75,9 +77,6 @@ def main():
 	for i in range(len(heightmap)):
 		for j in range(len(heightmap[i])):
 			height = heightmap[i][j]
-			#colour *= 1000
-			#colour = limit_255(colour)
-			#colour = abs(colour)
 			colour = colour_from_value(height)
 			pygame.draw.line(screen, colour, (i, j), (i, j))
 
@@ -101,14 +100,14 @@ def main():
 			if event.type == pygame.QUIT:
 				done = True
 			if event.type == pygame.KEYDOWN:
-				if event.key == K_x:
-					pass
+				if event.key == K_SPACE:
+					for roller in rollers:
+						roller.offset_pos((randint(-5, 5), randint(-5, 5)))
 			if event.type == pygame.KEYUP:
 				if event.key == K_x:
 					pass
 			if event.type == pygame.MOUSEBUTTONDOWN:
 				if event.button == 1:
-					#print("Left click at "+str(pygame.mouse.get_pos()))
 					rollers.append(Roller.Roller(pygame.mouse.get_pos()[0], pygame.mouse.get_pos()[1]))
 
 		#Game logic below
