@@ -49,7 +49,6 @@ def main():
 	print("Generating heightmap...")
 	heightmap_gen_start_time = time()
 	heightmap = []
-	moisturemap = []
 	MAP_SIZE = 0.5
 
 	for i in range(screen_dimensions[0]):
