@@ -128,7 +128,7 @@ def main():
 		screen.blit(loaded_perlin, (0, 0))
 
 		for roller in rollers:
-			pygame.draw.line(screen, invert_colour(screen.get_at(roller.get_pos())), (roller.get_x(), roller.get_y()), (roller.get_x(), roller.get_y()))
+			pygame.draw.line(screen, invert_colour(loaded_perlin.get_at(roller.get_pos())), (roller.get_x(), roller.get_y()), (roller.get_x(), roller.get_y()))
 
 		pygame.display.flip() #Updates display
 		clock.tick(60)
